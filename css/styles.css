@@ -608,6 +608,77 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
         width: 264px;
 }
 
+
+.footer-subscribe-text {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+}
+
+.footer-form {
+    display: flex;
+    gap: 24px;
+    margin: left auto ;
+}
+
+.footer-input {
+    width: 264px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    color: #ffffff;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 16px;
+}
+
+.footer-input:hover,
+.footer-input:focus {
+    border: 1px solid #31d0aa;
+}
+
+.footer-input::placeholder {
+    color: #ffffff;
+}
+
+.footer-subscribe-btn {
+    min-width: 165px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: #4d5ae5;
+    font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.footer-subscribe-btn:hover,
+.footer-subscribe-btn:focus {
+    border: none;
+    background-color: #31d0aa;
+}
+
+.footer-subscribe-icon {
+    margin-left: 16px;
+}
+
+
+
 .backdrop {
 position: fixed;
 top: 0;
@@ -618,8 +689,9 @@ background-color: rgba(46, 47, 66, 0.4);
 opacity: 0;
 visibility: hidden;
 pointer-events: none;
-transition: opasity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .backdrop.is-open {
 opacity: 1;
@@ -638,8 +710,7 @@ opacity: 1;
         border-radius: 4px;
         transform: translate(-50%, -50%);
         transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        padding-left: 24px;
-        padding-right: 24px;
+        padding: 72px 24px 24px 24px;
 }
 
 .backdrop:not(.is-open) .modal {
@@ -647,31 +718,32 @@ opacity: 1;
 }
 
 .modal-open {
-    position: absolute;
-        width: 24px;
-        height: 24px;
-        right: 24px;
-        top: 24px;
-        border-radius: 100%;
-            background-color:  #e7e9fc;
-            stroke-width: 1px;
-                border-color: rgba(0, 0, 0, 0.1);
-                transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 24px;
+    top: 24px;
+    border-radius: 50%;
+    background-color: #e7e9fc;
+    stroke-width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    fill: #2e2f42;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .modal-open:hover,
-.modal-open:focus {
+.modal-open:focus + .modal-open-icon {
     background-color: #404bbf;
-    fill: #404bbf;
-}
-
-.modal-close {
-    fill: #2e2f42;
-    position: relative;
-}
-
-.modal-close:focus {
-    fill: #fff;
+    fill: #ffffff;
+    border: none;
 }
 
 .modal-field {
@@ -687,6 +759,7 @@ opacity: 1;
                 line-height: 1.5;
                 letter-spacing: 0.02em;
                 color: #2e2f42;
+                margin-bottom: 16px;
 }
 
 .modal-label {
@@ -697,6 +770,7 @@ letter-spacing: 0.04em;
 color: #8e8f99;
 display: block;
 margin-bottom: 4px;
+line-height: 1.17;
 }
 
 
@@ -711,18 +785,21 @@ margin-bottom: 4px;
             font-size: 12px;
             line-height: 1.16667;
             letter-spacing: 0.04em;
-            transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
             padding-left: 38px;
-
-}
+            height: 40px
+            background-color: transparent;
+                outline: transparent;
+                transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
 .modal-input:focus,
 .modal-input:active {
-    border: #4d5ae5;
+    border-color: #4d5ae5;
 }
 
 .modal-input:focus + .modal-icon {
-    fill: #4d5ae5;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: #404bbf; 
 }
   
 .input-wrapper {
@@ -746,14 +823,24 @@ margin-bottom: 4px;
         padding: 16px 8px;
         font-weight: 400;
             font-size: 12px;
-            line-height: 1.16667;
             letter-spacing: 0.04em;
+            line-height: 1.17;
+            color: rgba(46, 47, 66, 0.4);
+            background-color: transparent;
+            padding: 8px 16px;
+            outline: transparent;
+            transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.modal-textarea:focus {
+    border-color: #4D5AE5;
+}
+
 
 .modal-textarea::placeholder {
     font-weight: 400;
         font-size: 12px;
-        line-height: 1.16667;
+        line-height: 1.7;
         letter-spacing: 0.04em;
         color: rgba(46, 47, 66, 0.4);
         padding: 8px 16px;
@@ -762,10 +849,11 @@ margin-bottom: 4px;
 .modal-check-text {
     font-weight: 400;
         font-size: 12px;
-        line-height: 1.16667;
+        line-height: 1.7;
         letter-spacing: 0.04em;
         color: #8e8f99;
         display: flex;
+
 }
 
 .modal-check-text span {
@@ -775,10 +863,10 @@ margin-bottom: 4px;
         border: 1px solid rgba(46, 47, 66, 0.4);
         margin-right: 8px;
         align-items: center;
-        display: flex;
+        display: inline-flex;
         justify-content: center;
         fill: transparent;
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-check:checked {
@@ -790,22 +878,32 @@ margin-bottom: 4px;
 .modal-check-text span:focus {
    fill: #f4f4fd;
    background-color: #404bbf;
+    border: none;
 }
 
 .submit-btn {
-    display: flex;
+    display: block;
         align-items: center;
         justify-content: center;
         border-radius: 4px;
         padding: 16px 32px;
-        width: 169px;
+        min-width: 169px
         height: 56px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-            background: #4d5ae5;font-weight: 500;
-                font-size: 16px;
-                line-height: 1.5;
-                letter-spacing: 0.04em;
-                text-align: center;
-                color: #fff;
-
+        background-color: #4d5ae5;
+        cursor: pointer;
+            border: none;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+        text-align: center;
+        color: #fff;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.submit-btn:hover,
+.submit-btn:focus {
+    background-color: #404bbf;
+}
+
