@@ -741,6 +741,11 @@ position: absolute;
     
 }
 
+button:hover>svg,
+button:focus>svg {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: #ffffff;
+}
 
 .modal-open:hover,
 .modal-open:focus {
@@ -794,7 +799,6 @@ line-height: 1.17;
     height: 40px;
     border: 1px solid rgba(46, 47, 66, 0.4);
         border-radius: 4px;
-        padding: 24px;
         font-weight: 400;
             font-size: 12px;
             line-height: 1.16667;
@@ -866,8 +870,6 @@ line-height: 1.17;
         line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
-        display: flex;
-
 }
 
 .modal-check-text span {
