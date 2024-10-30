@@ -719,6 +719,10 @@ opacity: 1;
     transform: translate(-50%, -100%);
 }
 
+.button {
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), backrgound-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .modal-open {
 position: absolute;
     width: 24px;
@@ -736,21 +740,33 @@ position: absolute;
     padding: 0;
     cursor: pointer;
     fill: #2e2f42;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), backrgound-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 };
+
+.button:hover,
+.button:focus {
+    border: none;
+    background-color: #404bbf;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover,
+.button:focus + .modal-open-icon {
+    fill: #ffffff;
+}
 
 .modal-open:hover,
 .modal-open:focus {
     border: none;
-        background-color: #404bbf;
-}
+    background-color: #404bbf;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
 
 .modal-open:hover,
 .modal-open:focus + .modal-open-icon {
-    fill: #ffffff;
-    
+    fill: #ffffff; 
 }
 
 .modal-field {
@@ -871,12 +887,12 @@ line-height: 1.17;
 }
 
 .modal-check-text span {
+    display: inline-flex;
     width: 16px;
     height: 16px;
     border-radius: 2px;
         border: 1px solid rgba(46, 47, 66, 0.4);
         margin-right: 8px;
-        display: inline-flex;
         align-items: center;
         justify-content: center;
         fill: transparent;
